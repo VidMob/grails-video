@@ -202,7 +202,8 @@ class VideoConversionService {
 				if (res>=0) return res
 				else throw new IOException("Can't parse playtime from string: " + originalOutput)
 			} else {
-				throw new IOException("Error status from ffprobe = " + exitStatus)
+//				throw new IOException("Error status from ffprobe = " + exitStatus)
+                throw new IOException("ffmpeg call failed. More information available in debug logs")
 			}
 		}
 		catch (Exception e) {
@@ -240,7 +241,8 @@ class VideoConversionService {
         res.hasVideo = VideoMetadata.hasVideoStream(originalOutput)
         return res
       } else {
-        throw new IOException("Error status from ffprobe = " + exitStatus)
+//        throw new IOException("Error status from ffprobe = " + exitStatus)
+          throw new IOException("ffmpeg call failed. More information available in debug logs")
       }
     }
     catch (Exception e) {

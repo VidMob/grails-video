@@ -9,7 +9,7 @@ import org.apache.log4j.Logger
  * @author Peter N. Steinmetz
  */
 class SysCmdUtils {
-	private static Logger log = Logger.getLogger(SysCmdUtils.getClass())
+	private static Logger log = Logger.getLogger(SysCmdUtils.class)
 	
 	/**
 	 * Execute a system command from an array of command and arguments
@@ -39,7 +39,7 @@ class SysCmdUtils {
 
 			proc.waitForProcessOutput(out, err)
 			if (out) log.debug "out:\n$out"
-			if (err) log.debug "err:\n$err"
+			if (err) log.error "err:\n$err"
       
       def exitStatus = proc.exitValue()
 
